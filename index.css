@@ -870,10 +870,11 @@ body {
   }
 
   .u-section-4 .u-group-1 {
-    width: 255px;
-    min-height: 575px;
-    margin-top: 55px;
-    margin-right: 30px;
+    width: 100%; /* بدل 312px */
+    max-width: 800px; /* الحد الأقصى مثل اللي في الصندوق الداخلي */
+    min-height: auto; /* خلي ارتفاعه يتحدد حسب المحتوى */
+    margin: 55px auto 0 auto; /* توسيط أفقياً بدل الهامش الجانبي */
+    padding: 0 15px; /* مسافة جانبية صغيرة */
   }
 
   .u-section-4 .u-container-layout-1 {
