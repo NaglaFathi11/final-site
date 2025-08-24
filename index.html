@@ -970,11 +970,13 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     <!-- قائمة المحاور -->
     <div class="u-list u-list-1">
       <div class="u-repeater u-repeater-1">
-   <div style="
-    width: 100%;
+<div style="
+    width: 100%;        /* الحاوية تمتد عرض كامل */
+    max-width: 100%;    /* نتأكد من عدم وجود قيود من القالب */
     display: flex;
-    justify-content: center;
-    margin-top: 30px; /* تقدر تزود أو تقلل حسب المسافة المطلوبة */
+    justify-content: center;  /* الزرار في الوسط */
+    align-items: center;      /* عموديًا لو تحبي */
+    margin-top: 30px;
 ">
   <a href="#"
      style="
@@ -985,18 +987,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
        font-size: 20px;
        font-weight: 700;
        text-align: center;
-       padding: 15px 30px;
+       padding: 12px 25px;
        border-radius: 15px;
        text-decoration: none;
        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
        line-height: 1.4;
        transition: all 0.3s ease;
-       max-width: 100%;
-     white-space: nowrap; /* تمنع التفاف النص */
+       white-space: nowrap;  /* تمنع التفاف النص */
      "
      onmouseover="this.style.background='linear-gradient(135deg, #ff8a45, #ff3d1a)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.3)';"
      onmouseout="this.style.background='linear-gradient(135deg, #ff7a18, #ff5722)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.2)';">
-     المحاور اللي<br>هنتدرّب عليها
+     المحاور اللي هنتدرّب عليها
   </a>
 </div>
 
