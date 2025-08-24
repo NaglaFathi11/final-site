@@ -1616,7 +1616,6 @@ body {
 
 @media (max-width: 575px) {
   .u-section-6 .u-sheet-1 {
-    min-height: 2316px;
   }
 
   .u-section-6 .u-shape-1 {
@@ -1636,7 +1635,7 @@ body {
   }
 
   .u-section-6 .u-group-1 {
-    min-height: 718px;
+    min-height: 530px;
     width: 330px;
     margin-top: -7px;
   }
@@ -1921,7 +1920,6 @@ body {
   }
 
   .u-section-7 .u-layout-wrap-1 {
-    margin-top: 100px;
   }
 
   .u-section-7 .u-layout-cell-1 {
