@@ -983,32 +983,85 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </p>
       </div>
     </div>
-
 <!-- النصوص + الزر -->
-<div class="u-container-style u-layout-cell u-size-60" style="text-align:center; direction:rtl;">
+<div class="u-container-style u-layout-cell u-size-60" style="text-align:center; direction:rtl; background: #f7f7f7; border-top: 1px solid #ddd;">
   <div class="u-container-layout">
-    <p style="margin:0 0 20px; font-size:1.1rem; color:#444; font-weight:500;">
+    <p style="margin:0 0 30px; font-size:1.1rem; color:#444; font-weight:500;">
       اشترك الآن بسعر مناسب للجميع
     </p>
+
     <!-- زرار الاشتراك -->
-    <a href="https://t.me/NaglaFG" id="subscribeBtn" style="
+    <a id="subscribeBtn" href="https://t.me/NaglaFG" style="
       display: inline-block;
-      padding: 15px 25px;
-      background: linear-gradient(135deg, #6c63ff, #3f3d56);
-      color: #fff;
-      font-size: 1.2rem;
+      padding: 18px 40px; /* عريض أكتر */
+      background: #ff6b6b; /* لون خلفية جديد */
+      color: #fff; /* لون النص */
+      font-size: 1.3rem;
       font-weight: 700;
-      border: none;
+      border: none; /* بدون حدود */
       border-radius: 30px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* ظل لطيف */
       cursor: pointer;
-      text-decoration: none;
-      margin-top: 20px;
+      text-align: center;
+      z-index: 9999;
+      margin-top: 20px; /* مسافة واضحة من النص */
+      transition: all 0.5s ease;
     ">
       اضغط هنا للإشتراك
     </a>
+
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById('subscribeBtn');
+  const footer = document.querySelector('footer'); // لو عندك footer
+  const btnParent = btn.parentElement;
+
+  const btnOffsetTop = btnParent.offsetTop + btn.offsetTop;
+  const btnHeight = btn.offsetHeight;
+
+  window.addEventListener('scroll', function() {
+    const scrollY = window.scrollY + window.innerHeight;
+    const footerTop = footer ? footer.offsetTop : document.body.scrollHeight;
+
+    if (scrollY < btnOffsetTop + btnHeight) {
+      // مكانه الطبيعي قبل ما نوصل
+      btn.style.position = 'relative';
+      btn.style.bottom = 'auto';
+      btn.style.left = 'auto';
+      btn.style.transform = 'none';
+      btn.style.width = 'auto';
+    } else if (scrollY < footerTop) {
+      // ثابت أسفل الشاشة
+      btn.style.position = 'fixed';
+      btn.style.bottom = '30px';
+      btn.style.left = '50%';
+      btn.style.transform = 'translateX(-50%)';
+      btn.style.width = 'calc(100% - 40px)'; // مناسب للشاشات الصغيرة
+      btn.style.maxWidth = '400px'; // أقصى عرض
+    } else {
+      // وصلنا للفوتر، يرجع لمكانه
+      btn.style.position = 'relative';
+      btn.style.bottom = 'auto';
+      btn.style.left = 'auto';
+      btn.style.transform = 'none';
+      btn.style.width = 'auto';
+    }
+  });
+});
+</script>
+
+<style>
+/* Responsive للهواتف */
+@media (max-width: 600px) {
+  #subscribeBtn {
+    padding: 14px 25px;
+    font-size: 1.1rem;
+  }
+}
+</style>
 
 
   </div>
@@ -1016,89 +1069,6 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 
 </section>
 
-
-    <div class="u-size-29 u-size-60-md">
-              <div class="u-layout-col">
-              <div
-  class="u-align-center u-container-align-center u-container-style u-layout-cell u-left-cell u-size-40 u-layout-cell-3"
-  data-animation-name="zoomIn"
-  data-animation-duration="2000"
->
-  <div
-    class="u-container-layout u-valign-middle u-container-layout-7"
-    style="text-align:center;"
-  >
-    <img
-      class="u-image"
-      src="images/جروب اسئلة الجهاز المركزي.jpg"
-      alt="جروب اسئلة"
-      style="width:250px; height:250px; border-radius:50%; object-fit:cover; box-shadow:0 8px 20px rgba(0,0,0,.15);"
-      data-animation-name="fadeIn"
-      data-animation-duration="1000"
-      data-animation-direction="Right"
-      data-animation-delay="250"
-    />
-  </div>
-</div>
-
-
- <!-- النص وقنواتنا -->
-    <div class="u-align-center u-container-align-center u-container-style u-layout-cell u-left-cell u-size-20 u-white u-layout-cell-4">
-      <div class="u-container-layout u-valign-top">
-      <!-- العنوان -->
-<h3 style="
-  font-size: clamp(22px, 3vw, 28px); 
-  font-weight: 800; 
-  margin-bottom: 15px; 
-  color: #ff5722; 
-  text-align: center; 
-  font-family: 'Cairo', sans-serif;
-  line-height: 1.4;
-  
-">
-  📘 جروب أسئلة الجهاز المركزي المجاني
-</h3>
-
-<!-- الوصف -->
-<p style="
-  font-size: clamp(16px, 2vw, 20px); 
-  line-height: 1.8; 
-  margin: 0 auto 25px; 
-  max-width: 700px; 
-  text-align: center; 
-  color: #333; 
-  font-family: 'Cairo', sans-serif;
-  font-weight: 700;
-">
-  👇تابع معنا كل ما يخص المسابقات الحكومية من خلال القنوات التالية 
-</p>
-
-        <!-- قنوات الشرح بشكل عمودي مع مربع وخلفية -->
-        <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
-          <a href="https://t.me/questions7000" target="_blank" title="قناة التلجرام" style="display:flex; align-items:center; gap:10px; padding:10px 15px; border-radius:10px; background:#0088cc; color:#fff; text-decoration:none; width:220px; justify-content:center; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
-            <i class="fab fa-telegram"></i> قناة التلجرام
-          </a>
-        <a href="https://www.youtube.com/@%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1-%D8%AD7%D8%B8" 
-   style="padding:10px 15px; border-radius:10px; background:#ff0000; color:#fff; text-decoration:none; width:220px; display:flex; justify-content:center; align-items:center; box-shadow:0 4px 6px rgba(0,0,0,0.1);"
-   target="_blank"
->
-  <i class="fab fa-youtube" style="margin-right:8px;"></i> قناة اليوتيوب
-</a>
-
-          <a href="https://www.facebook.com/profile.php?id=61574570998452" target="_blank" title="صفحة الفيسبوك" style="display:flex; align-items:center; gap:10px; padding:10px 15px; border-radius:10px; background:#3b5998; color:#fff; text-decoration:none; width:220px; justify-content:center; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
-            <i class="fab fa-facebook"></i> صفحة الفيسبوك
-          </a>
-          <a href="https://whatsapp.com/channel/0029VbAkjEhKgsNnwzuQ6U2e" target="_blank" title="صفحة الواتساب" style="display:flex; align-items:center; gap:10px; padding:10px 15px; border-radius:10px; background:#25d366; color:#fff; text-decoration:none; width:220px; justify-content:center; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
-            <i class="fab fa-whatsapp"></i> صفحة الواتساب
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-
-              </div>
-            </div>
 
 
    
