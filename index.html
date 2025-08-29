@@ -990,60 +990,74 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       اشترك الآن بسعر مناسب للجميع
     </p>
 
-    <!-- زرار الاشتراك -->
-  <a id="subscribeBtn" href="https://t.me/NaglaFG" style="
-  display: inline-block;
-  padding: 18px 40px;
-  background: #ff6b6b;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 700;
-  border: none;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  cursor: pointer;
-  text-align: center;
-  z-index: 9999;
-  margin-top: 20px;
-  transition: all 0.5s ease;
-">
-  اضغط هنا للإشتراك
-</a>
+       <!-- زرار الاشتراك -->
+    <a id="subscribeBtn" href="https://t.me/NaglaFG" style="
+      display: inline-block;
+      padding: 18px 40px;
+      background: #ff6b6b;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      cursor: pointer;
+      text-align: center;
+      z-index: 9999;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+      will-change: transform; /* تحسين الأداء */
+      transition: all 0.3s ease;
+    ">
+      اضغط هنا للإشتراك
+    </a>
+
+  </div>
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const btn = document.getElementById('subscribeBtn');
-  const footer = document.querySelector('footer');
+  const footer = document.querySelector('footer'); // لو عندك footer
   const btnParent = btn.parentElement;
 
-  const btnOffsetTop = btnParent.offsetTop + btn.offsetTop;
+  const btnInitialTop = btnParent.offsetTop + btn.offsetTop;
   const btnHeight = btn.offsetHeight;
 
-  window.addEventListener('scroll', function() {
+  let ticking = false;
+
+  function updateButton() {
     const scrollY = window.scrollY + window.innerHeight;
     const footerTop = footer ? footer.offsetTop : document.body.scrollHeight;
 
-    if (scrollY < btnOffsetTop + btnHeight) {
-      // مكانه الطبيعي قبل ما نوصل
+    if (scrollY < btnInitialTop + btnHeight) {
+      // مكانه الطبيعي
       btn.style.position = 'relative';
       btn.style.bottom = 'auto';
       btn.style.left = 'auto';
       btn.style.transform = 'none';
-      btn.style.width = 'auto';
     } else if (scrollY < footerTop) {
-      // ثابت أسفل الشاشة، لزق تمامًا
+      // ثابت أسفل الشاشة
       btn.style.position = 'fixed';
       btn.style.bottom = '0';
       btn.style.left = '50%';
       btn.style.transform = 'translateX(-50%)';
-      btn.style.width = '100%'; // ياخد كامل عرض الشاشة
-      btn.style.maxWidth = '400px'; // أقصى عرض
     } else {
-      // عند الفوتر، يرجع لمكانه الطبيعي
-      btn.style.position = 'relative';
-      btn.style.bottom = 'auto';
-      btn.style.left = 'auto';
-      btn.style.transform = 'none';
-      btn.style.width = 'auto';
+      // وصلنا للفوتر
+      btn.style.position = 'absolute';
+      btn.style.bottom = '0';
+      btn.style.left = '50%';
+      btn.style.transform = 'translateX(-50%)';
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateButton);
+      ticking = true;
     }
   });
 });
