@@ -991,32 +991,28 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </p>
 
     <!-- زرار الاشتراك -->
-    <a id="subscribeBtn" href="https://t.me/NaglaFG" style="
-      display: inline-block;
-      padding: 18px 40px; /* عريض أكتر */
-      background: #ff6b6b; /* لون خلفية جديد */
-      color: #fff; /* لون النص */
-      font-size: 1.3rem;
-      font-weight: 700;
-      border: none; /* بدون حدود */
-      border-radius: 30px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* ظل لطيف */
-      cursor: pointer;
-      text-align: center;
-      z-index: 9999;
-      margin-top: 20px; /* مسافة واضحة من النص */
-      transition: all 0.5s ease;
-    ">
-      اضغط هنا للإشتراك
-    </a>
-
-  </div>
-</div>
+  <a id="subscribeBtn" href="https://t.me/NaglaFG" style="
+  display: inline-block;
+  padding: 18px 40px;
+  background: #ff6b6b;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+  text-align: center;
+  z-index: 9999;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+">
+  اضغط هنا للإشتراك
+</a>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const btn = document.getElementById('subscribeBtn');
-  const footer = document.querySelector('footer'); // لو عندك footer
+  const footer = document.querySelector('footer');
   const btnParent = btn.parentElement;
 
   const btnOffsetTop = btnParent.offsetTop + btn.offsetTop;
@@ -1034,15 +1030,15 @@ document.addEventListener("DOMContentLoaded", function() {
       btn.style.transform = 'none';
       btn.style.width = 'auto';
     } else if (scrollY < footerTop) {
-      // ثابت أسفل الشاشة
+      // ثابت أسفل الشاشة، لزق تمامًا
       btn.style.position = 'fixed';
-      btn.style.bottom = '30px';
+      btn.style.bottom = '0';
       btn.style.left = '50%';
       btn.style.transform = 'translateX(-50%)';
-      btn.style.width = 'calc(100% - 40px)'; // مناسب للشاشات الصغيرة
+      btn.style.width = '100%'; // ياخد كامل عرض الشاشة
       btn.style.maxWidth = '400px'; // أقصى عرض
     } else {
-      // وصلنا للفوتر، يرجع لمكانه
+      // عند الفوتر، يرجع لمكانه الطبيعي
       btn.style.position = 'relative';
       btn.style.bottom = 'auto';
       btn.style.left = 'auto';
@@ -1052,6 +1048,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+
 
 <style>
 /* Responsive للهواتف */
