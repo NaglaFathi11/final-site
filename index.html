@@ -57,6 +57,40 @@
     <meta property="og:title" content="Page 1" />
     <meta property="og:type" content="website" />
     <meta data-intl-tel-input-cdn-path="intlTelInput/" />
+    <style>
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        flex-direction: column;
+      }
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      .loading-text {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-top: 15px;
+        font-family: 'Tajawal', sans-serif;
+        font-weight: 600;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body
     data-home-page="Page-1.html"
@@ -1001,7 +1035,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 
        <!-- زرار الاشتراك -->
     <a id="subscribeBtn" href="subscribe.html"
-     onclick="gtag('event', 'click', { 'event_category': 'اشتراك', 'event_label': 'زر الاشتراك' });"
+     onclick="showLoading(); gtag('event', 'click', { 'event_category': 'اشتراك', 'event_label': 'زر الاشتراك' });"
      style="
       display: inline-block;
       padding: 18px 40px;
@@ -1027,6 +1061,15 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 </div>
 
 <script>
+function showLoading() {
+  const overlay = document.getElementById('loadingOverlay');
+  overlay.style.display = 'flex';
+  // إخفاء الـ overlay بعد 3 ثواني (يمكن تعديل الوقت)
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 3000);
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   const btn = document.getElementById('subscribeBtn');
   const footer = document.querySelector('footer'); // لو عندك footer
@@ -1095,3 +1138,7 @@ document.addEventListener("DOMContentLoaded", function() {
    
   </body>
 </html>
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">جاري التحميل...</div>
+</div>
