@@ -1146,7 +1146,12 @@ document.addEventListener("DOMContentLoaded", function() {
   // إضافة وظيفة الضغط على الزر
   btn.addEventListener('click', function() {
     this.style.display = 'none';
-    document.getElementById('choice-section').style.display = 'block';
+    const choiceSection = document.getElementById('choice-section');
+    choiceSection.style.display = 'block';
+    // تمرير الصفحة إلى القسم الجديد
+    setTimeout(() => {
+      choiceSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100); // تأخير قليل لضمان عرض العنصر
   });
 });
 </script>
