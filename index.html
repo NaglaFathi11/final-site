@@ -999,101 +999,29 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       اشترك الآن بسعر مناسب للجميع
     </p>
 
-    <!-- زرار الاشتراك -->
-    <button
-      id="subscribeBtn"
-      onclick="gtag('event', 'click', { 'event_category': 'اشتراك', 'event_label': 'زر الاشتراك' });"
-      style="
-        display: inline-block;
-        padding: 18px 40px;
-        background: rgb(20 26 231);
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 700;
-        border: none;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-        cursor: pointer;
-        text-align: center;
-        z-index: 9999;
-        margin-top: 20px;
-        width: 100%;
-        max-width: 400px;
-        will-change: transform; /* تحسين الأداء */
-        transition: all 0.3s ease;
-      "
-    >
-      اضغط هنا للإشتراك
-    </button>
-    <div id="choice-section" style="display: none; text-align: center; margin-top: 20px;">
-      <h1 style="font-size: 2rem; font-weight: 700; color: #333; margin-bottom: 10px; font-family: 'Tajawal', sans-serif;">
-        مرحباً بك! 👋
-      </h1>
-      <p style="font-size: 1.2rem; color: #555; margin-bottom: 20px; font-family: 'Tajawal', sans-serif;">
-        عاوز تشترك في الجروب المجاني ولا المدفوع؟
-      </p>
-      <div style="display: flex; flex-direction: row; gap: 30px; align-items: center; justify-content: center;">
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <a
-            href="https://t.me/questions7000"
-            target="_blank"
-            style="
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              width: 90px;
-              height: 90px;
-              background: linear-gradient(135deg, #28a745, #20c997);
-              color: #fff;
-              font-size: 0.7rem;
-              font-weight: 700;
-              border-radius: 50%;
-              text-decoration: none;
-              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-              transition: all 0.3s ease;
-              cursor: pointer;
-              border: 3px solid transparent;
-              text-align: center;
-              line-height: 1.2;
-              padding: 5px;
-            "
-            onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.4)'; this.style.borderColor='#28a745';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'; this.style.borderColor='transparent';"
-          >
-            اضغط هنا للجروب المجاني
-          </a>
-        </div>
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <a
-            href="http://t.me/NaglaFG"
-            target="_blank"
-            style="
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              width: 90px;
-              height: 90px;
-              background: linear-gradient(135deg, #007bff, #0056b3);
-              color: #fff;
-              font-size: 0.7rem;
-              font-weight: 700;
-              border-radius: 50%;
-              text-decoration: none;
-              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-              transition: all 0.3s ease;
-              cursor: pointer;
-              border: 3px solid transparent;
-              text-align: center;
-              line-height: 1.2;
-              padding: 5px;
-            "
-            onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.4)'; this.style.borderColor='#007bff';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'; this.style.borderColor='transparent';"
-          >
-            اضغط هنا لتفاصيل الجروب المدفوع
-          </a>
-        </div>
-      </div>
-    </div>
+       <!-- زرار الاشتراك -->
+    <a id="subscribeBtn" href="https://t.me/NaglaFG"
+     onclick="gtag('event', 'click', { 'event_category': 'اشتراك', 'event_label': 'زر الاشتراك' });"
+     style="
+      display: inline-block;
+      padding: 18px 40px;
+      background: rgb(20 26 231);
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      cursor: pointer;
+      text-align: center;
+      z-index: 9999;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+      will-change: transform; /* تحسين الأداء */
+      transition: all 0.3s ease;
+    " >
+      اضغط هنا للإشتراك في جروب المشتركين 
+    </a>
 
   </div>
 </div>
@@ -1141,17 +1069,6 @@ document.addEventListener("DOMContentLoaded", function() {
       window.requestAnimationFrame(updateButton);
       ticking = true;
     }
-  });
-
-  // إضافة وظيفة الضغط على الزر
-  btn.addEventListener('click', function() {
-    this.style.display = 'none';
-    const choiceSection = document.getElementById('choice-section');
-    choiceSection.style.display = 'block';
-    // تمرير الصفحة إلى القسم الجديد
-    setTimeout(() => {
-      choiceSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100); // تأخير قليل لضمان عرض العنصر
   });
 });
 </script>
